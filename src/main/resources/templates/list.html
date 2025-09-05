@@ -7,8 +7,9 @@
 </head>
 <body>
 <h1>Lista de Produtos</h1>
+
 <div class="container-link">
-    <a href="/products/new">Adicionar Novo Produto</a>
+    <a th:href="@{/products/new}">Adicionar Novo Produto</a>
 </div>
 
 <table>
@@ -20,16 +21,30 @@
         <th>Setor</th>
         <th>Tamanho</th>
         <th>Preço Unitário</th>
+        <th>Ações</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="produto : ${produtos}">
-        <td th:text="${produto.idProduto}"></td>
-        <td th:text="${produto.name}"></td>
-        <td th:text="${produto.type}"></td>
-        <td th:text="${produto.sector}"></td>
-        <td th:text="${produto.size}"></td>
-        <td th:text="${produto.unitPrice}"></td>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.idProduto}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.type}"></td>
+        <td th:text="${p.sector}"></td>
+        <td th:text="${p.size}"></td>
+        <td th:text="${p.unitPrice}"></td>
+
+        <td>
+            <a class="btn btn-edit"
+               th:href="@{/products/{id}/edit(id=${p.idProduto})}">
+                Editar
+            </a>
+
+            <form th:action="@{/products/{id}(id=${p.idProduto})}"
+                  method="post" style="display:inline">
+                <input type="hidden" name="_method" value="delete"/>
+                <button class="btn btn-delete" type="submit">Excluir</button>
+            </form>
+        </td>
     </tr>
     </tbody>
 </table>

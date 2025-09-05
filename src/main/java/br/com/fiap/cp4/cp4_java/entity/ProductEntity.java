@@ -11,7 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class ProdutosEntity {
+public class ProductEntity {
 
     @Id
     @Column(name = "ID_PRODUTO", nullable = false)
