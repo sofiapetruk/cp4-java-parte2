@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Produtos</title>
+    <title>Lista de Usuários</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Lista de Produtos</h1>
+
+<h1>Lista de Usuários</h1>
 
 <div class="container-link">
-    <a th:href="@{/products/new}">Adicionar Novo Produto</a>
+    <a th:href="@{/users/new}" class="btn btn-new">Cadastrar Novo Usuário</a>
 </div>
 
 <table>
@@ -17,31 +18,26 @@
     <tr>
         <th>ID</th>
         <th>Nome</th>
-        <th>Tipo</th>
-        <th>Setor</th>
-        <th>Tamanho</th>
-        <th>Preço Unitário</th>
+        <th>E-mail</th>
+        <th>Senha</th>
         <th>Ações</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="p : ${products}">
-        <td th:text="${p.idProduto}"></td>
-        <td th:text="${p.name}"></td>
-        <td th:text="${p.type}"></td>
-        <td th:text="${p.sector}"></td>
-        <td th:text="${p.size}"></td>
-        <td th:text="${p.unitPrice}"></td>
-
+    <tr th:each="u : ${users}">
+        <td th:text="${u.idUser}"></td>
+        <td th:text="${u.name}"></td>
+        <td th:text="${u.email}"></td>
+        <td th:text="${u.password}"></td>
         <td>
             <a th:href="@{/home}" class="btn btn-home">Home</a>
 
             <a class="btn btn-edit"
-               th:href="@{/products/{id}/edit(id=${p.idProduto})}">
+               th:href="@{/users/{id}/edit(id=${u.idUsuario})}">
                 Editar
             </a>
 
-            <form th:action="@{/products/{id}(id=${p.idProduto})}"
+            <form th:action="@{/users/{id}(id=${u.idUsuario})}"
                   method="post" style="display:inline">
                 <input type="hidden" name="_method" value="delete"/>
                 <button class="btn btn-delete" type="submit">Excluir</button>
