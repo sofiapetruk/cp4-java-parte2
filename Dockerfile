@@ -31,7 +31,7 @@ EXPOSE 8080
 WORKDIR /app
 
 # Copie o arquivo JAR gerado para a imagem final
-COPY --from=build /app/target/cp4-java-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/cp5-java-0.0.1-SNAPSHOT.jar app.jar
 
 # Comando para executar o aplicativo
 ENTRYPOINT ["java", "-jar", "app.jar"]

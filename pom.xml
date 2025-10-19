@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.fiap.cp4</groupId>
-	<artifactId>cp4-java</artifactId>
+	<artifactId>cp5-java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cp4-java</name>
+	<name>cp5-java</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

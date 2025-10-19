@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cp4-java
+    name: cp5-java
 
   datasource:
     url: jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl
