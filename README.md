@@ -11,6 +11,9 @@
 | Luiz Sadao Kamada | 557652 |
 | Raphaela de Oliveira Tatto | 554983 |
 
+## Vídeo de demonstração do projeto
+https://youtu.be/ZyTqhM5u8ls
+
 ## IDE Utilizadas
 
 - Visual Studio Code
